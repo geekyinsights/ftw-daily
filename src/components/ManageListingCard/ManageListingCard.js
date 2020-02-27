@@ -13,7 +13,7 @@ import {
   LISTING_STATE_DRAFT,
   propTypes,
 } from '../../util/types';
-import { formatMoney } from '../../util/currency';
+//import { formatMoney } from '../../util/currency';
 import { ensureOwnListing } from '../../util/data';
 import {
   LISTING_PAGE_PENDING_APPROVAL_VARIANT,
@@ -42,7 +42,7 @@ import css from './ManageListingCard.css';
 // Menu content needs the same padding
 const MENU_CONTENT_OFFSET = -12;
 const MAX_LENGTH_FOR_WORDS_IN_TITLE = 7;
-
+/*
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
     const formattedPrice = formatMoney(intl, price);
@@ -60,7 +60,7 @@ const priceData = (price, intl) => {
     };
   }
   return {};
-};
+};*/
 
 const createListingURL = (routes, listing) => {
   const id = listing.id.uuid;
@@ -140,7 +140,7 @@ export const ManageListingCardComponent = props => {
     [css.menuItemDisabled]: !!actionsInProgressListingId,
   });
 
-  const { formattedPrice, priceTitle } = priceData(price, intl);
+ // const { formattedPrice, priceTitle } = priceData(price, intl);
 
   const hasError = hasOpeningError || hasClosingError;
   const thisListingInProgress =
@@ -295,6 +295,7 @@ export const ManageListingCardComponent = props => {
       </div>
 
       <div className={css.info}>
+        {/* 
         <div className={css.price}>
           {formattedPrice ? (
             <React.Fragment>
@@ -311,7 +312,7 @@ export const ManageListingCardComponent = props => {
             </div>
           )}
         </div>
-
+              */}
         <div className={css.mainInfo}>
           <div className={css.titleWrapper}>
             <InlineTextButton

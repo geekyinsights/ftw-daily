@@ -38,7 +38,7 @@ const SavedCardDetails = props => {
 
   const { last4Digits, expirationMonth, expirationYear, brand } = card || {};
   const classes = classNames(rootClassName || css.root, className);
-
+/*
   const paymentMethodPlaceholderDesktop = intl.formatMessage(
     { id: 'SavedCardDetails.savedPaymentMethodPlaceholderDesktop' },
     { last4Digits }
@@ -55,7 +55,7 @@ const SavedCardDetails = props => {
       <span className={css.paymentMethodPlaceholderMobile}>{paymentMethodPlaceholderMobile}</span>
     </>
   );
-
+*/
   const replaceCardText = intl.formatMessage({
     id: 'SavedCardDetails.replaceCardText',
   });
@@ -91,7 +91,7 @@ const SavedCardDetails = props => {
   const defaultCard = (
     <div className={css.savedPaymentMethod}>
       <IconCard brand={brand} className={css.cardIcon} />
-      {paymentMethodPlaceholder}
+     {/*{paymentMethodPlaceholder}  */}
       <span className={isCardExpired ? css.expirationDateExpired : css.expirationDate}>
         {expirationMonth}/{expirationYear.toString().substring(2)}
       </span>

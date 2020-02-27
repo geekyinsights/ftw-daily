@@ -20,6 +20,7 @@ const SectionHero = props => {
         <h2 className={css.heroSubTitle}>
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
+        {/*
         <NamedLink
           name="SearchPage"
           to={{
@@ -30,6 +31,8 @@ const SectionHero = props => {
         >
           <FormattedMessage id="SectionHero.browseButton" />
         </NamedLink>
+        */}
+        <FormattedMessage id="SectionHero.browseButton" />
       </div>
     </div>
   );

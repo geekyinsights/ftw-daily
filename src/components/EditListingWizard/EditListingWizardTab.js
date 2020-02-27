@@ -16,7 +16,7 @@ import {
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
-  EditListingPricingPanel,
+  //EditListingPricingPanel,
 } from '../../components';
 
 import css from './EditListingWizard.css';
@@ -35,7 +35,7 @@ export const SUPPORTED_TABS = [
   FEATURES,
   POLICY,
   LOCATION,
-  PRICING,
+  //PRICING,
   AVAILABILITY,
   PHOTOS,
 ];
@@ -213,7 +213,7 @@ const EditListingWizardTab = props => {
         />
       );
     }
-    case PRICING: {
+    /*case PRICING: {
       const submitButtonTranslationKey = isNewListingFlow
         ? 'EditListingWizard.saveNewPricing'
         : 'EditListingWizard.saveEditPricing';
@@ -226,7 +226,7 @@ const EditListingWizardTab = props => {
           }}
         />
       );
-    }
+    }*/
     case AVAILABILITY: {
       const submitButtonTranslationKey = isNewListingFlow
         ? 'EditListingWizard.saveNewAvailability'
@@ -302,7 +302,7 @@ EditListingWizardTab.propTypes = {
       publicData: object,
       description: string,
       geolocation: object,
-      pricing: object,
+      //pricing: object,
       title: string,
     }),
     images: array,

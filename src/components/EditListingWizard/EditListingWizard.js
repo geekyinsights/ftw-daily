@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
 import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { /*FormattedMessage, */injectIntl, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
-import { createResourceLocatorString } from '../../util/routes';
+//import { createResourceLocatorString } from '../../util/routes';
 import { withViewport } from '../../util/contextHelpers';
 import {
   LISTING_PAGE_PARAM_TYPE_DRAFT,
@@ -14,8 +14,8 @@ import {
 } from '../../util/urlHelpers';
 import { ensureCurrentUser, ensureListing } from '../../util/data';
 
-import { Modal, NamedRedirect, Tabs, StripeConnectAccountStatusBox } from '../../components';
-import { StripeConnectAccountForm } from '../../forms';
+import { /*Modal,*/ NamedRedirect, Tabs, /*StripeConnectAccountStatusBox*/ } from '../../components';
+//import { StripeConnectAccountForm } from '../../forms';
 
 import EditListingWizardTab, {
   AVAILABILITY,
@@ -23,7 +23,7 @@ import EditListingWizardTab, {
   FEATURES,
   POLICY,
   LOCATION,
-  PRICING,
+  //PRICING,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.css';
@@ -40,7 +40,7 @@ export const TABS = [
   FEATURES,
   POLICY,
   LOCATION,
-  PRICING,
+  //PRICING,
   ...availabilityMaybe,
   PHOTOS,
 ];
@@ -58,9 +58,9 @@ const tabLabel = (intl, tab) => {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
-  } else if (tab === PRICING) {
-    key = 'EditListingWizard.tabLabelPricing';
-  } else if (tab === AVAILABILITY) {
+  } //else if (tab === PRICING) {
+   // key = 'EditListingWizard.tabLabelPricing';} 
+  else if (tab === AVAILABILITY) {
     key = 'EditListingWizard.tabLabelAvailability';
   } else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
@@ -82,7 +82,7 @@ const tabCompleted = (tab, listing) => {
     availabilityPlan,
     description,
     geolocation,
-    price,
+    //price,
     title,
     publicData,
   } = listing.attributes;
@@ -97,8 +97,8 @@ const tabCompleted = (tab, listing) => {
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
-    case PRICING:
-      return !!price;
+    //case PRICING:
+      //return !!price;
     case AVAILABILITY:
       return !!availabilityPlan;
     case PHOTOS:
@@ -137,6 +137,7 @@ const scrollToTab = (tabPrefix, tabId) => {
 };
 
 // Create return URL for the Stripe onboarding form
+/*
 const createReturnURL = (returnURLType, rootURL, routes, pathParams) => {
   const path = createResourceLocatorString(
     'EditListingStripeOnboardingPage',
@@ -171,7 +172,7 @@ const handleGetStripeConnectAccountLinkFn = (getLinkFn, commonParams) => type =>
       window.location.href = url;
     })
     .catch(err => console.error(err));
-};
+};*/
 
 // Create a new or edit listing through EditListingWizard
 class EditListingWizard extends Component {
@@ -183,14 +184,14 @@ class EditListingWizard extends Component {
 
     this.state = {
       draftId: null,
-      showPayoutDetails: false,
+      //showPayoutDetails: false,
     };
     this.handleCreateFlowTabScrolling = this.handleCreateFlowTabScrolling.bind(this);
     this.handlePublishListing = this.handlePublishListing.bind(this);
-    this.handlePayoutModalClose = this.handlePayoutModalClose.bind(this);
-    this.handlePayoutSubmit = this.handlePayoutSubmit.bind(this);
+    //this.handlePayoutModalClose = this.handlePayoutModalClose.bind(this);
+    //this.handlePayoutSubmit = this.handlePayoutSubmit.bind(this);
   }
-
+/*
   componentDidMount() {
     const { stripeOnboardingReturnURL } = this.props;
 
@@ -198,14 +199,14 @@ class EditListingWizard extends Component {
       this.setState({ showPayoutDetails: true });
     }
   }
-
+*/
   handleCreateFlowTabScrolling(shouldScroll) {
     this.hasScrolledToTab = shouldScroll;
   }
 
   handlePublishListing(id) {
-    const { onPublishListingDraft, currentUser, stripeAccount } = this.props;
-
+  const { onPublishListingDraft /*, currentUser , stripeAccount*/ } = this.props;
+/*
     const stripeConnected =
       currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id;
 
@@ -222,10 +223,11 @@ class EditListingWizard extends Component {
       this.setState({
         draftId: id,
         showPayoutDetails: true,
-      });
-    }
+      }); */
+       onPublishListingDraft(id); //my edit
+    //}
   }
-
+/*
   handlePayoutModalClose() {
     this.setState({ showPayoutDetails: false });
   }
@@ -239,7 +241,7 @@ class EditListingWizard extends Component {
       .catch(() => {
         // do nothing
       });
-  }
+  } */
 
   render() {
     const {
@@ -252,7 +254,7 @@ class EditListingWizard extends Component {
       intl,
       errors,
       fetchInProgress,
-      payoutDetailsSaveInProgress,
+     /* payoutDetailsSaveInProgress,
       payoutDetailsSaved,
       onManageDisableScrolling,
       onPayoutDetailsFormChange,
@@ -263,7 +265,8 @@ class EditListingWizard extends Component {
       fetchStripeAccountError,
       stripeAccountFetched,
       stripeAccount,
-      currentUser,
+      */
+      //currentUser,
       ...rest
     } = this.props;
 
@@ -306,25 +309,25 @@ class EditListingWizard extends Component {
       return { name: 'EditListingPage', params: { ...params, tab } };
     };
 
-    const formDisabled = getAccountLinkInProgress;
-    const ensuredCurrentUser = ensureCurrentUser(currentUser);
-    const currentUserLoaded = !!ensuredCurrentUser.id;
-    const stripeConnected = currentUserLoaded && !!stripeAccount && !!stripeAccount.id;
+    //const formDisabled = getAccountLinkInProgress;
+    //const ensuredCurrentUser = ensureCurrentUser(currentUser);
+    //const currentUserLoaded = !!ensuredCurrentUser.id;
+   // const stripeConnected = currentUserLoaded && !!stripeAccount && !!stripeAccount.id;
 
     const rootURL = config.canonicalRootURL;
     const routes = routeConfiguration();
     const { returnURLType, ...pathParams } = params;
-    const successURL = createReturnURL('success', rootURL, routes, pathParams);
-    const failureURL = createReturnURL('failure', rootURL, routes, pathParams);
+    //const successURL = createReturnURL('success', rootURL, routes, pathParams);
+    //const failureURL = createReturnURL('failure', rootURL, routes, pathParams);
 
-    const accountId = stripeConnected ? stripeAccount.id : null;
-    const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
-
+    //const accountId = stripeConnected ? stripeAccount.id : null;
+    //const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
+   /*
     const requirementsMissing =
       stripeAccount &&
       (hasRequirements(stripeAccountData, 'past_due') ||
         hasRequirements(stripeAccountData, 'currently_due'));
-
+    
     const savedCountry = stripeAccountData ? stripeAccountData.country : null;
 
     const handleGetStripeConnectAccountLink = handleGetStripeConnectAccountLinkFn(
@@ -337,6 +340,7 @@ class EditListingWizard extends Component {
     );
 
     const returnedNormallyFromStripe = returnURLType === 'success';
+    
     const showVerificationError = returnURLType === 'failure';
     const showVerificationNeeded = stripeConnected && requirementsMissing;
 
@@ -344,7 +348,7 @@ class EditListingWizard extends Component {
     if (returnedNormallyFromStripe && stripeConnected && !requirementsMissing) {
       return <NamedRedirect name="EditListingPage" params={pathParams} />;
     }
-
+    */
     return (
       <div className={classes}>
         <Tabs
@@ -375,65 +379,7 @@ class EditListingWizard extends Component {
             );
           })}
         </Tabs>
-        <Modal
-          id="EditListingWizard.payoutModal"
-          isOpen={this.state.showPayoutDetails}
-          onClose={this.handlePayoutModalClose}
-          onManageDisableScrolling={onManageDisableScrolling}
-          usePortal
-        >
-          <div className={css.modalPayoutDetailsWrapper}>
-            <h1 className={css.modalTitle}>
-              <FormattedMessage id="EditListingPhotosPanel.payoutModalTitleOneMoreThing" />
-              <br />
-              <FormattedMessage id="EditListingPhotosPanel.payoutModalTitlePayoutPreferences" />
-            </h1>
-            <p className={css.modalMessage}>
-              <FormattedMessage id="EditListingPhotosPanel.payoutModalInfo" />
-            </p>
-            {!currentUserLoaded ? (
-              <FormattedMessage id="StripePayoutPage.loadingData" />
-            ) : (
-              <StripeConnectAccountForm
-                disabled={formDisabled}
-                inProgress={payoutDetailsSaveInProgress}
-                ready={payoutDetailsSaved}
-                stripeBankAccountLastDigits={getBankAccountLast4Digits(stripeAccountData)}
-                savedCountry={savedCountry}
-                submitButtonText={intl.formatMessage({
-                  id: 'StripePayoutPage.submitButtonText',
-                })}
-                stripeAccountError={
-                  createStripeAccountError || updateStripeAccountError || fetchStripeAccountError
-                }
-                stripeAccountFetched={stripeAccountFetched}
-                onChange={onPayoutDetailsFormChange}
-                onSubmit={rest.onPayoutDetailsSubmit}
-                onGetStripeConnectAccountLink={handleGetStripeConnectAccountLink}
-                stripeConnected={stripeConnected}
-              >
-                {stripeConnected && (showVerificationError || showVerificationNeeded) ? (
-                  <StripeConnectAccountStatusBox
-                    type={showVerificationError ? 'verificationError' : 'verificationNeeded'}
-                    inProgress={getAccountLinkInProgress}
-                    onGetStripeConnectAccountLink={handleGetStripeConnectAccountLink(
-                      'custom_account_verification'
-                    )}
-                  />
-                ) : stripeConnected && savedCountry ? (
-                  <StripeConnectAccountStatusBox
-                    type="verificationSuccess"
-                    inProgress={getAccountLinkInProgress}
-                    disabled={payoutDetailsSaveInProgress}
-                    onGetStripeConnectAccountLink={handleGetStripeConnectAccountLink(
-                      'custom_account_update'
-                    )}
-                  />
-                ) : null}
-              </StripeConnectAccountForm>
-            )}
-          </div>
-        </Modal>
+        
       </div>
     );
   }
@@ -467,7 +413,7 @@ EditListingWizard.propTypes = {
       publicData: object,
       description: string,
       geolocation: object,
-      pricing: object,
+      //pricing: object,
       title: string,
     }),
     images: array,
@@ -479,14 +425,14 @@ EditListingWizard.propTypes = {
     publishListingError: object,
     showListingsError: object,
     uploadImageError: object,
-    createStripeAccountError: object,
+    //createStripeAccountError: object,
   }).isRequired,
   fetchInProgress: bool.isRequired,
-  payoutDetailsSaveInProgress: bool.isRequired,
-  payoutDetailsSaved: bool.isRequired,
-  onPayoutDetailsFormChange: func.isRequired,
-  onPayoutDetailsSubmit: func.isRequired,
-  onGetStripeConnectAccountLink: func.isRequired,
+  //payoutDetailsSaveInProgress: bool.isRequired,
+  //payoutDetailsSaved: bool.isRequired,
+  //onPayoutDetailsFormChange: func.isRequired,
+  //onPayoutDetailsSubmit: func.isRequired,
+  //onGetStripeConnectAccountLink: func.isRequired,
   onManageDisableScrolling: func.isRequired,
   updateInProgress: bool,
 

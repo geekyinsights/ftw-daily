@@ -14,7 +14,7 @@ import { NamedLink, ResponsiveImage } from '../../components';
 import css from './ListingCard.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS = 10;
-
+/*
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
     const formattedPrice = formatMoney(intl, price);
@@ -33,7 +33,7 @@ const priceData = (price, intl) => {
   }
   return {};
 };
-
+*/
 class ListingImage extends Component {
   render() {
     return <ResponsiveImage {...this.props} />;
@@ -53,8 +53,8 @@ export const ListingCardComponent = props => {
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-  const { formattedPrice, priceTitle } = priceData(price, intl);
-
+//  const { formattedPrice, priceTitle } = priceData(price, intl);
+/*
   const unitType = config.bookingUnitType;
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
@@ -64,7 +64,7 @@ export const ListingCardComponent = props => {
     : isDaily
     ? 'ListingCard.perDay'
     : 'ListingCard.perUnit';
-
+*/
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
       <div
@@ -83,6 +83,7 @@ export const ListingCardComponent = props => {
         </div>
       </div>
       <div className={css.info}>
+{/*
         <div className={css.price}>
           <div className={css.priceValue} title={priceTitle}>
             {formattedPrice}
@@ -91,6 +92,7 @@ export const ListingCardComponent = props => {
             <FormattedMessage id={unitTranslationKey} />
           </div>
         </div>
+        */}
         <div className={css.mainInfo}>
           <div className={css.title}>
             {richText(title, {

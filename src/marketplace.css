@@ -22,8 +22,8 @@
   /* Full screen Background image located in root-folder/src/assets */
   --backgroundImage: {
     /* Gradient direction and overlaying the black color on top of the image for better readability */
-    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-      url('../../assets/background-1440.jpg');
+    background: /*linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),*/
+      url('../../assets/sutf-desktop-header.png');
 
     /* Add loading color for the div */
     background-color: var(--matterColor);
@@ -65,6 +65,7 @@
   --matterColorNegative: #e7e7e7;
   --matterColorBright: #fcfcfc;
   --matterColorLight: #ffffff;
+  --matterColorHeroTitle: #343434;
 
   --matterColorLightTransparent: rgba(255, 255, 255, 0.65);
 

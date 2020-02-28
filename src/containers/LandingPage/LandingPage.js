@@ -19,8 +19,11 @@ import {
 } from '../../components';
 import { TopbarContainer } from '../../containers';
 
-import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
-import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
+import facebookImage from '../../assets/sutf-desktop-header.png';
+import twitterImage from '../../assets/sutf-desktop-header.png';
+
+
+
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {

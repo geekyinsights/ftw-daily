@@ -9,7 +9,9 @@ import config from '../../config';
 import {
   Page,
   SectionHero,
+  SectionScreenshot,
   SectionHowItWorks,
+  SectionVideo,
   SectionLocations,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
@@ -64,12 +66,14 @@ export const LandingPageComponent = props => {
           <div className={css.heroContainer}>
             <SectionHero className={css.hero} history={history} location={location} />
           </div>
-          <ul className={css.sections}>
-            <li className={css.section}>
-              <div className={css.sectionContentFirstChild}>
-                <SectionLocations />
-              </div>
-            </li>
+          <div className={css.heroContainer}>
+               <SectionScreenshot className={css.hero}/>
+          </div>
+          <div className={css.heroContainer}>
+               <SectionVideo className={css.hero}/>
+          </div>
+          <ul>
+           
             <li className={css.section}>
               <div className={css.sectionContent}>
                 <SectionHowItWorks />

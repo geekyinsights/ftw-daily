@@ -430,7 +430,7 @@ export class ListingPageComponent extends Component {
                   <SectionDescriptionMaybe description={description} />
                   <SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />
                   <SectionRulesMaybe publicData={publicData} />
-                  <SectionProducts />
+                  {/*<SectionProducts />*/}
 
 
 

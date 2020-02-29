@@ -26,7 +26,7 @@
       url('../../assets/sutf-desktop-header.png');
 
     /* Add loading color for the div */
-    background-color: var(--matterColor);
+    background-color: var(--matterColorBackgroundSite);
 
     /* Cover the whole screen with the background image */
     background-size: cover;
@@ -40,6 +40,27 @@
     }
   }
 
+    /* Full screen Phone Section image located in root-folder/src/assets */
+    --sectionPhoneImage: {
+      /* Gradient direction and overlaying the black color on top of the image for better readability */
+      background: /*linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),*/
+        url('../../assets/phoneImage.png');
+  
+      /* Add loading color for the div */
+      background-color: var(--matterColor);
+  
+      /* Cover the whole screen with the background image */
+      background-size: cover;
+  
+      /* Align the image within the container */
+      background-position: center center;
+  
+      @media (--viewportLarge) {
+        border-radius: 40px;
+        border: solid 36px var(--matterColorBright);
+      }
+    }
+  
   /* ================ Colors ================ */
 
   --marketplaceColor: #ffc9ca;
@@ -66,6 +87,7 @@
   --matterColorBright: #fcfcfc;
   --matterColorLight: #ffffff;
   --matterColorHeroTitle: #343434;
+  --matterColorBackgroundSite: #fdfaf4;
 
   --matterColorLightTransparent: rgba(255, 255, 255, 0.65);
 

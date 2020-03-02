@@ -668,3 +668,16 @@
      margin-bottom: 20px;
    }
 }
+
+.productTitle {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorAnti);
+
+  margin-top: 0;
+  margin-bottom: 20px;
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+}

@@ -3,7 +3,14 @@
 .title {
   @apply --marketplaceH1FontStyles;
   margin-top: 0;
+  text-align: center;
 }
+.stitle {
+  @apply --marketplaceH2FontStyles;
+  margin-top: 0;
+  text-align: center;
+}
+
 
 .steps {
   display: flex;
@@ -86,7 +93,7 @@
 /* A wrapper for a responsive image that holds it's aspect ratio */
 .imageWrapper {
   position: relative;
-  width: 100%;
+  width: 85%;
   border-radius: 4px;
   transition: var(--transitionStyleButton);
 
@@ -119,9 +126,9 @@
 }
 
 .linkText {
-  @apply --marketplaceH2FontStyles;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColor);
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 0;
 
   @media (--viewportMedium) {
@@ -130,5 +137,13 @@
 }
 
 .locationName {
-  color: var(--marketplaceColor);
+  color: var(--matterColorDark);
+}
+
+
+.subTitle {
+  @apply --marketplaceBodyFontStyles;
+
+  color: var(--matterColorDark);
+  margin: 0 0 32px 0;
 }

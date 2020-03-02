@@ -213,6 +213,7 @@ class TopbarComponent extends Component {
             title={intl.formatMessage({ id: 'Topbar.logoIcon' })}
           >
             <Logo format="mobile" />
+           
           </NamedLink>
           <Button
             rootClassName={css.searchMenu}
@@ -223,6 +224,7 @@ class TopbarComponent extends Component {
           </Button>
         </div>
         <div className={css.desktop}>
+          
           <TopbarDesktop
             className={desktopClassName}
             currentUserHasListings={currentUserHasListings}
@@ -245,6 +247,7 @@ class TopbarComponent extends Component {
         >
           {authInProgress ? null : mobileMenu}
         </Modal>
+        {/*
         <Modal
           id="TopbarMobileSearch"
           containerClassName={css.modalContainer}
@@ -264,6 +267,7 @@ class TopbarComponent extends Component {
             </p>
           </div>
         </Modal>
+        */}
         <ModalMissingInformation
           id="MissingInformationReminder"
           containerClassName={css.missingInformationModal}

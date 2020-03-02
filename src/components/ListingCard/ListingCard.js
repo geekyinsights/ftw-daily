@@ -100,9 +100,11 @@ export const ListingCardComponent = props => {
               longWordClass: css.longWord,
             })}
           </div>
+          {/*
           <div className={css.authorInfo}>
             <FormattedMessage id="ListingCard.hostedBy" values={{ authorName }} />
           </div>
+          */}
         </div>
       </div>
     </NamedLink>

@@ -428,9 +428,9 @@ export class ListingPageComponent extends Component {
                     //onContactUser={this.onContactUser}
                   />
                   <SectionDescriptionMaybe description={description} />
-                  <SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />
+                  {/*<SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />*/}
                   <SectionRulesMaybe publicData={publicData} />
-                  {/*<SectionProducts />*/}
+                  <SectionProducts />
 
 
 
@@ -441,6 +441,7 @@ export class ListingPageComponent extends Component {
                   />
 
                   {/*<SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />*/}
+                  {/*
                   <SectionHostMaybe
                     title={title}
                     listing={currentListing}
@@ -454,7 +455,9 @@ export class ListingPageComponent extends Component {
                     currentUser={currentUser}
                     onManageDisableScrolling={onManageDisableScrolling}
                   />
+                  */}
                 </div>
+               
                 {/*
                 <BookingPanel
                   className={css.bookingPanel}

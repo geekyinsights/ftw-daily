@@ -12,34 +12,34 @@ import helsinkiImage from './images/bestthing_smaller.png';
 import rovaniemiImage from './images/goldenhour_smaller.png';
 import rukaImage from './images/beautifulday_smaller.png';
 
-class LocationImage extends Component {
+class ProductImage extends Component {
   render() {
     const { alt, ...rest } = this.props;
     return <img alt={alt} {...rest} />;
   }
 }
-const LazyImage = lazyLoadWithDimensions(LocationImage);
+const LazyImage = lazyLoadWithDimensions(ProductImage);
 
-const locationLink = (name, image, searchQuery) => {
+const productLink = (name, image) => {
   const nameText = <span className={css.locationName}>{name}</span>;
   return (
-    <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
+    <NamedLink name="SearchPage" className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
-          <LazyImage src={image} alt={name} className={css.locationImage} />
+          <LazyImage src={image} alt={name} className={css.productImage} />
         </div>
       </div>
       <div className={css.linkText}>
         <FormattedMessage
           id="SectionLocations.listingsInLocation"
-          values={{ location: nameText }}
+          values={{ name: nameText}}
         />
       </div>
     </NamedLink>
   );
 };
 
-const SectionLocations = props => {
+const SectionHowItWorks = props => {
   const { rootClassName, className } = props;
 
   const classes = classNames(rootClassName || css.root, className);
@@ -47,37 +47,66 @@ const SectionLocations = props => {
   return (
     <div className={classes}>
       <div className={css.title}>
-        <FormattedMessage id="SectionLocations.title" />
+        <FormattedMessage id="SectionHowItWorks.titleLineOne" />
+      </div>
+      <div className={css.stitle}>
+
+        <FormattedMessage id="SectionHowItWorks.titleLineTwo" />
       </div>
       <div className={css.locations}>
-        {locationLink(
-          'Helsinki',
-          helsinkiImage,
-          '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002'
-        )}
-        
-        {locationLink(
-          'Rovaniemi',
-          rovaniemiImage,
-          '?address=Rovaniemi%2C%20Finland&bounds=67.18452510000002%2C27.32667850000007%2C66.1553745%2C24.736871199999996&origin=66.50394779999999%2C25.729390599999988'
-        )}
-        {locationLink(
-          'Ruka',
-          rukaImage,
-          '?address=Ruka%2C%20Finland&bounds=66.1704578%2C29.14246849999995%2C66.1614402%2C29.110453699999994&origin=66.16594940000002%2C29.12646110000003'
-        )}
-      </div>
+        <ul>
+        <div className={css.steps}>
+         <div className={css.step}>
+          {productLink(
+            'Golden Hour Bath Balm',
+            helsinkiImage,
+          )}
+           <p className={css.subTitle}>
+              <FormattedMessage id="SectionHowItWorks.part3Text" />
+            </p>
+          </div>
+        </div>
+        </ul>
+        <ul>
+        <div className={css.steps}>
+         <div className={css.step}>
+          {productLink(
+            'Beautiful Day Bath Balm',
+            rovaniemiImage,
+          
+          )}
+           <p className={css.subTitle}>
+              <FormattedMessage id="SectionHowItWorks.part2Text" />
+            </p>
+          </div>
+        </div>
+          </ul>
+          <ul>
+            <div className={css.steps}>
+              <div className={css.step}>
+                {productLink(
+                  'Best Thing Bath Balm',
+                  rukaImage
+                
+                )}
+                 <p className={css.subTitle}>
+                    <FormattedMessage id="SectionHowItWorks.part1Text" />
+                  </p>
+                </div>
+            </div>
+         </ul>
+    </div>
     </div>
   );
 };
 
-SectionLocations.defaultProps = { rootClassName: null, className: null };
+SectionHowItWorks.defaultProps = { rootClassName: null, className: null };
 
 const { string } = PropTypes;
 
-SectionLocations.propTypes = {
+SectionHowItWorks.propTypes = {
   rootClassName: string,
   className: string,
 };
 
-export default SectionLocations;
+export default SectionHowItWorks;

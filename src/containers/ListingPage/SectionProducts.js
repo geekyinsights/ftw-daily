@@ -45,7 +45,7 @@ const state = {
   
 };
 
- 
+ /*
 componentDidMount() {
     var data = JSON.stringify({});
   
@@ -169,7 +169,7 @@ componentDidMount() {
     xhr.send(data);
    }
 }
-
+*/
 const SectionProducts = props => {
     const { rootClassName, className } = props;
     
@@ -180,7 +180,7 @@ const SectionProducts = props => {
            <div className={css.productTitle}>
                <FormattedMessage id="SectionProducts.title" />
            </div>
-   
+            {/*
            <div className={css.card}>
                <div className={css.cardImgTop}>
                  <img loading='lazy' src='../../assets/bestthing_smaller.png'/>
@@ -194,7 +194,9 @@ const SectionProducts = props => {
                        </div>
                 </div>
            </div>
+             */}
        </div>
+          
      );
 
 

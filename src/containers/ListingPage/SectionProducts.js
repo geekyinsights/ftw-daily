@@ -38,6 +38,39 @@ const productLink = (name, image) => {
        </NamedLink>
      );
 };
+
+
+const productCard = {
+    
+
+    let items = this.responseText.product.entityID;
+    for (let i = 0; i < props.numTimes; i++) {
+        items.push(props.children(i));
+    }
+    return (
+
+             {/*
+           <div className={css.card}>
+               <div className={css.cardImgTop}>
+                 <img loading='lazy' src='../../assets/bestthing_smaller.png'/>
+               
+                       <div className={css.cardBody}>
+                        <h5 classNames={css.cardTitle}>{this.responseText.product.name}</h5>
+                        <h5 className={css.cardPrice}>{this.responseText.product.price}</h5>
+                            <p className={css.cardDescription}>{this.responseText.product.description}</p>
+                            
+                            <a href="this.responseText.product.entityId" className={css.enquirySubmitButtonWrapper }>Add to cart</a>
+                       </div>
+                </div>
+           </div>
+             */}
+      
+        );
+}
+
+
+
+
 const state = {   
     //put api keys below
     ACCESS_TOKEN: 'bfv7raui86hh86d62v3ms02mndpcq6d',
@@ -89,7 +122,7 @@ componentDidMount() {
                         email
                     }
                     site {
-                        products (first: 6){
+                        products (entityIds: [245,84,181,85,86,87,89,90,353,95,96,179,180,246,98]){
                         edges {
                             product: node {
                                 ...ProductFields
@@ -175,12 +208,14 @@ const SectionProducts = props => {
     
     const classes = classNames(rootClassName || css.root, className);
    
-    return (
-       <div className={classes}>
-           <div className={css.productTitle}>
-               <FormattedMessage id="SectionProducts.title" />
-           </div>
-            {/*
+    function Repeat(props) {
+        let items = this.responseText.product.entityID;
+        for (let i = 0; i < props.numTimes; i++) {
+          items.push(props.children(i));
+        }
+        return (
+
+             {/*
            <div className={css.card}>
                <div className={css.cardImgTop}>
                  <img loading='lazy' src='../../assets/bestthing_smaller.png'/>
@@ -195,6 +230,20 @@ const SectionProducts = props => {
                 </div>
            </div>
              */}
+      
+        )
+    
+   
+    return (
+       <div className={classes}>
+           <div className={css.productTitle}>
+               <FormattedMessage id="SectionProducts.title" />
+           </div>
+           <Repeat numTimes={15}>
+            {(index) => <div key={index}>This is item {index} in the list</div>}
+          </Repeat>
+        
+           
        </div>
           
      );

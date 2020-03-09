@@ -424,11 +424,9 @@ export class ListingPageComponent extends Component {
                     richTitle={richTitle}
                     category={category}
                     hostLink={hostLink}
-                    //showContactUser={showContactUser}
-                    //onContactUser={this.onContactUser}
+                  
                   />
                   <SectionDescriptionMaybe description={description} />
-                  {/*<SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />*/}
                   <SectionRulesMaybe publicData={publicData} />
                   <SectionProducts />
 
@@ -440,38 +438,7 @@ export class ListingPageComponent extends Component {
                     listingId={currentListing.id}
                   />
 
-                  {/*<SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />*/}
-                  {/*
-                  <SectionHostMaybe
-                    title={title}
-                    listing={currentListing}
-                    authorDisplayName={authorDisplayName}
-                    onContactUser={this.onContactUser}
-                    isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                    onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                    sendEnquiryError={sendEnquiryError}
-                    sendEnquiryInProgress={sendEnquiryInProgress}
-                    onSubmitEnquiry={this.onSubmitEnquiry}
-                    currentUser={currentUser}
-                    onManageDisableScrolling={onManageDisableScrolling}
-                  />
-                  */}
                 </div>
-               
-                {/*
-                <BookingPanel
-                  className={css.bookingPanel}
-                  listing={currentListing}
-                  isOwnListing={isOwnListing}
-                  unitType={unitType}
-                  onSubmit={handleBookingSubmit}
-                  title={bookingTitle}
-                  subTitle={bookingSubTitle}
-                  authorDisplayName={authorDisplayName}
-                  onManageDisableScrolling={onManageDisableScrolling}
-                  timeSlots={timeSlots}
-                  fetchTimeSlotsError={fetchTimeSlotsError}
-                />*/}
               </div>
             </div>
           </LayoutWrapperMain>

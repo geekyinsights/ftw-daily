@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import config from '../../config';
 import classNames from 'classnames';
 import includes from 'lodash/includes';
 import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';

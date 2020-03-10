@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
 import { compose } from 'redux';
-import { /*FormattedMessage, */injectIntl, intlShape } from '../../util/reactIntl';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import classNames from 'classnames';
 import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
-//import { createResourceLocatorString } from '../../util/routes';
 import { withViewport } from '../../util/contextHelpers';
 import {
   LISTING_PAGE_PARAM_TYPE_DRAFT,
@@ -14,22 +13,21 @@ import {
 } from '../../util/urlHelpers';
 import { ensureCurrentUser, ensureListing } from '../../util/data';
 
-import { /*Modal,*/ NamedRedirect, Tabs, /*StripeConnectAccountStatusBox*/ } from '../../components';
-//import { StripeConnectAccountForm } from '../../forms';
+import {  NamedRedirect, Tabs } from '../../components';
+
 
 import EditListingWizardTab, {
-  AVAILABILITY,
+ // AVAILABILITY,
   DESCRIPTION,
-  FEATURES,
+  //FEATURES,
   POLICY,
   LOCATION,
-  //PRICING,
   PHOTOS,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.css';
 
 // Show availability calendar only if environment variable availabilityEnabled is true
-const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
+//const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 
 // You can reorder these panels.
 // Note 1: You need to change save button translations for new listing flow
@@ -37,11 +35,11 @@ const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 // and listing publishing happens after last panel.
 export const TABS = [
   DESCRIPTION,
-  FEATURES,
+  //FEATURES,
   POLICY,
   LOCATION,
   //PRICING,
-  ...availabilityMaybe,
+  //...availabilityMaybe,
   PHOTOS,
 ];
 
@@ -52,17 +50,19 @@ const tabLabel = (intl, tab) => {
   let key = null;
   if (tab === DESCRIPTION) {
     key = 'EditListingWizard.tabLabelDescription';
-  } else if (tab === FEATURES) {
-    key = 'EditListingWizard.tabLabelFeatures';
-  } else if (tab === POLICY) {
+  } //else if (tab === FEATURES) {
+    //key = 'EditListingWizard.tabLabelFeatures';
+  //} 
+  else if (tab === POLICY) {
     key = 'EditListingWizard.tabLabelPolicy';
   } else if (tab === LOCATION) {
     key = 'EditListingWizard.tabLabelLocation';
   } //else if (tab === PRICING) {
    // key = 'EditListingWizard.tabLabelPricing';} 
-  else if (tab === AVAILABILITY) {
-    key = 'EditListingWizard.tabLabelAvailability';
-  } else if (tab === PHOTOS) {
+  //else if (tab === AVAILABILITY) {
+   // key = 'EditListingWizard.tabLabelAvailability';
+  //}
+   else if (tab === PHOTOS) {
     key = 'EditListingWizard.tabLabelPhotos';
   }
 
@@ -79,7 +79,7 @@ const tabLabel = (intl, tab) => {
  */
 const tabCompleted = (tab, listing) => {
   const {
-    availabilityPlan,
+    //availabilityPlan,
     description,
     geolocation,
     //price,
@@ -91,16 +91,16 @@ const tabCompleted = (tab, listing) => {
   switch (tab) {
     case DESCRIPTION:
       return !!(description && title);
-    case FEATURES:
-      return !!(publicData && publicData.amenities);
+    //case FEATURES:
+      //return !!(publicData && publicData.amenities);
     case POLICY:
       return !!(publicData && typeof publicData.rules !== 'undefined');
     case LOCATION:
       return !!(geolocation && publicData && publicData.location && publicData.location.address);
     //case PRICING:
       //return !!price;
-    case AVAILABILITY:
-      return !!availabilityPlan;
+   // case AVAILABILITY:
+     // return !!availabilityPlan;
     case PHOTOS:
       return images && images.length > 0;
     default:
@@ -135,44 +135,6 @@ const scrollToTab = (tabPrefix, tabId) => {
     });
   }
 };
-
-// Create return URL for the Stripe onboarding form
-/*
-const createReturnURL = (returnURLType, rootURL, routes, pathParams) => {
-  const path = createResourceLocatorString(
-    'EditListingStripeOnboardingPage',
-    routes,
-    { ...pathParams, returnURLType },
-    {}
-  );
-  const root = rootURL.replace(/\/$/, '');
-  return `${root}${path}`;
-};
-
-// Get attribute: stripeAccountData
-const getStripeAccountData = stripeAccount => stripeAccount.attributes.stripeAccountData || null;
-
-// Get last 4 digits of bank account returned in Stripe account
-const getBankAccountLast4Digits = stripeAccountData =>
-  stripeAccountData && stripeAccountData.external_accounts.data.length > 0
-    ? stripeAccountData.external_accounts.data[0].last4
-    : null;
-
-// Check if there's requirements on selected type: 'past_due', 'currently_due' etc.
-const hasRequirements = (stripeAccountData, requirementType) =>
-  stripeAccountData != null &&
-  stripeAccountData.requirements &&
-  Array.isArray(stripeAccountData.requirements[requirementType]) &&
-  stripeAccountData.requirements[requirementType].length > 0;
-
-// Redirect user to Stripe's hosted Connect account onboarding form
-const handleGetStripeConnectAccountLinkFn = (getLinkFn, commonParams) => type => () => {
-  getLinkFn({ type, ...commonParams })
-    .then(url => {
-      window.location.href = url;
-    })
-    .catch(err => console.error(err));
-};*/
 
 // Create a new or edit listing through EditListingWizard
 class EditListingWizard extends Component {

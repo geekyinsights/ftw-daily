@@ -51,7 +51,6 @@ import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
-import SectionProducts from './SectionProducts';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -430,10 +429,6 @@ export class ListingPageComponent extends Component {
                   <SectionDescriptionMaybe description={description} />
                   {/*<SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />*/}
                   <SectionRulesMaybe publicData={publicData} />
-                  <SectionProducts />
-
-
-
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}

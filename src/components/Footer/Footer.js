@@ -115,11 +115,11 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002',
+                        '?address=Jackson%2C%20MS&bounds=31.298756%2C-90.184807%2C32.298756%2C-91.184807&origin=32.298756%2C-91.184807',
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchHelsinki" />
+                    <FormattedMessage id="Footer.searchJackson" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -131,7 +131,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchTurku" />
+                    <FormattedMessage id="Footer.searchHouston" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -143,7 +143,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchTampere" />
+                    <FormattedMessage id="Footer.searchAustin" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -155,7 +155,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchOulu" />
+                    <FormattedMessage id="Footer.searchNewOrleans" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -167,7 +167,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchRuka" />
+                    <FormattedMessage id="Footer.searchNewYork" />
                   </NamedLink>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchKuopio" />
+                    <FormattedMessage id="Footer.searchLosAngeles" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -195,7 +195,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchMikkeli" />
+                    <FormattedMessage id="Footer.searchChicago" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -207,7 +207,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchEspoo" />
+                    <FormattedMessage id="Footer.searchAtlanta" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -219,7 +219,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchVantaa" />
+                    <FormattedMessage id="Footer.searchMemphis" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
@@ -231,7 +231,7 @@ const Footer = props => {
                     }}
                     className={css.link}
                   >
-                    <FormattedMessage id="Footer.searchAhvenanmaa" />
+                    <FormattedMessage id="Footer.searchLittleRock" />
                   </NamedLink>
                 </li>
               </ul>

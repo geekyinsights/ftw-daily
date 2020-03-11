@@ -250,8 +250,6 @@ const SearchFiltersComponent = props => {
     <div className={classes}>
       <div className={css.filters}>
         {categoryFilterElement}
-        {priceFilterElement}
-        {dateRangeFilterElement}
         {keywordFilterElement}
         {toggleSearchFiltersPanelButton}
       </div>
@@ -286,8 +284,8 @@ SearchFiltersComponent.defaultProps = {
   searchingInProgress: false,
   categoryFilter: null,
   //amenitiesFilter: null,
-  priceFilter: null,
-  dateRangeFilter: null,
+  // priceFilter: null,
+  //dateRangeFilter: null,
   isSearchFiltersPanelOpen: false,
   toggleSearchFiltersPanel: null,
   searchFiltersPanelSelectedCount: 0,
@@ -303,8 +301,8 @@ SearchFiltersComponent.propTypes = {
   onManageDisableScrolling: func.isRequired,
   categoriesFilter: propTypes.filterConfig,
   //amenitiesFilter: propTypes.filterConfig,
-  priceFilter: propTypes.filterConfig,
-  dateRangeFilter: propTypes.filterConfig,
+  //priceFilter: propTypes.filterConfig,
+  //dateRangeFilter: propTypes.filterConfig,
   isSearchFiltersPanelOpen: bool,
   toggleSearchFiltersPanel: func,
   searchFiltersPanelSelectedCount: number,

@@ -115,7 +115,7 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Jackson%2C%20MS&bounds=31.298756%2C-90.184807%2C32.298756%2C-91.184807&origin=32.298756%2C-91.184807',
+                        '?address=Jackson%2C%20MS&bounds=31.298756%2C-90.184807%2C34.298756%2C-91.184807&origin=32.298756%2C-91.184807',
                     }}
                     className={css.link}
                   >
@@ -179,7 +179,7 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Kuopio%2C%20Finland&bounds=63.40340329999999%2C28.457629300000008%2C62.592254%2C26.890028099999995&origin=62.89796999999999%2C27.67817249999996',
+                        '?address=Center%2C%20USA&bounds=30.51073,%2C-95.4247%2C32.51073,%2C-965.4247,&origin=31.51073%2C-96.4247',
                     }}
                     className={css.link}
                   >

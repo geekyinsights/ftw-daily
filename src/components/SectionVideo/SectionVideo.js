@@ -23,7 +23,7 @@ const SectionVideo = props => {
          name="SearchPage"
          to={{
            search:
-             'address=Finland&bounds=70.0922932%2C31.5870999%2C59.693623%2C20.456500199999937',
+             '?address=USA&bounds=28.87664400000001%2C-91.34532850000005%2C34.45425059999999%2C-96.94061499999998',
          }}
          className={css.heroButton}
        >

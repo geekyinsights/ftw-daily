@@ -61,20 +61,21 @@
   /* Special viewport for adjusting the heroContent's placement */
 
   @media only screen and (min-width: 1025px) and (max-width: 1366px) {
-    padding: 0 136px 0 136px;
+    padding: 0 16px 0 636px;
   }
 
   @media only screen and (min-width: 1367px) {
     margin: 0 auto;
     max-width: calc(1052px + 36px + 36px);
     width: 100%;
-    padding: 0 0px 0 700px;
+    padding: 0 0 0 440px;
   }
 }
 
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
   color: var(--matterColorHeroTitle);
+  padding: 0 0 0 25px;
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
@@ -89,6 +90,7 @@
 
   color: var(--matterColorHeroTitle);
   margin: 0 0 32px 0;
+ 
 
   @apply --SectionHero_animation;
   animation-delay: 0.65s;
@@ -97,6 +99,7 @@
     max-width: var(--SectionHero_desktopTitleMaxWidth);
     margin: 0 0 63px 0;
   }
+  
 }
 
 .heroButton {

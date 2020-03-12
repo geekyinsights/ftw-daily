@@ -63,16 +63,16 @@
   /* Special viewport for adjusting the heroContent's placement */
 
   @media only screen and (min-width: 1025px) and (max-width: 1366px) {
-    padding: 0 36px 0 36px;
-    vertical-align: middle;
+    padding: 0 24px 0 0px;
+    text-align: center;
   }
 
   @media only screen and (min-width: 1367px) {
     margin: 0 auto;
     max-width: calc(1052px + 36px + 36px);
     width: 100%;
-    padding: 100px 300px 0 200px;
-    text-align: center;
+    padding: 50px 0px 0 300px;
+    
   }
 }
 
@@ -93,6 +93,7 @@
 
   color: var(--matterColorHeroTitle);
   margin: 0 0 32px 0;
+  text-align: center;
 
   @apply --SectionHero_animation;
   animation-delay: 0.65s;
@@ -101,6 +102,7 @@
     max-width: var(--SectionHero_desktopTitleMaxWidth);
     margin: 0 0 63px 0;
   }
+  
 }
 
 .heroButton {
@@ -113,4 +115,5 @@
     display: inline-block;
     width: 260px;
   }
+  
 }

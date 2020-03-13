@@ -1,0 +1,96 @@
+@import '../../marketplace.css';
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  min-width: 30%;
+  height: 350px;
+  margin-bottom: 3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.productsContainer {
+  /* This overflows, but i won't overflow the parent class width */
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .productsContainer {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+  }
+}
+.cardImage {
+  height: 200px;
+}
+.cardImage > img {
+  object-fit: contain;
+  height: 100%;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.productImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.cardImgTop {
+  min-height: 25%;
+  object-fit: contain;
+}
+.cardBody {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.cardText {
+  text-align: center;
+}
+.textTruncate {
+  text-align: center;
+}
+
+.cardTitle {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorDark);
+
+  margin-top: 0;
+  margin-bottom: 16px;
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.productTitle {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorAnti);
+
+  margin-top: 0;
+  margin-bottom: 20px;
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+}

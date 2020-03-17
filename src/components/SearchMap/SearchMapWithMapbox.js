@@ -9,7 +9,7 @@ import { parse } from '../../util/urlHelpers';
 import { propTypes } from '../../util/types';
 import { ensureListing } from '../../util/data';
 import { sdkBoundsToFixedCoordinates, hasSameSDKBounds } from '../../util/maps';
-import { SearchMapInfoCard, SearchMapPriceLabel, SearchMapGroupLabel } from '../../components';
+import { SearchMapInfoCard, /*SearchMapPriceLabel,*/ SearchMapGroupLabel } from '../../components';
 
 import { groupedByCoordinates, reducedToArray } from './SearchMap.helpers.js';
 import css from './SearchMapWithMapbox.css';
@@ -129,7 +129,7 @@ export const isMapsLibLoaded = () =>
  * Return price labels grouped by listing locations.
  * This is a helper function for SearchMapWithMapbox component.
  */
-const priceLabelsInLocations = (
+/*const priceLabelsInLocations = (
   listings,
   activeListingId,
   infoCardOpen,
@@ -195,7 +195,7 @@ const priceLabelsInLocations = (
     };
   });
   return priceLabels;
-};
+};*/
 
 /**
  * Return info card. This is a helper function for SearchMapWithMapbox component.
@@ -378,16 +378,16 @@ class SearchMapWithMapbox extends Component {
 
     if (this.map) {
       // Create markers out of price labels and grouped labels
-      const labels = priceLabelsInLocations(
+      /*const labels = priceLabelsInLocations(
         listings,
         activeListingId,
         infoCardOpen,
         onListingClicked,
         mapComponentRefreshToken
-      );
+      );*/
 
       // If map has moved or info card opened, unnecessary markers need to be removed
-      const removableMarkers = differenceBy(this.currentMarkers, labels, 'markerId');
+      const removableMarkers = differenceBy(this.currentMarkers, /*labels,*/ 'markerId');
       removableMarkers.forEach(rm => rm.marker.remove());
 
       // Helper function to create markers to given container
@@ -398,7 +398,7 @@ class SearchMapWithMapbox extends Component {
 
       // SearchMapPriceLabel and SearchMapGroupLabel:
       // create a new marker or use existing one if markerId is among previously rendered markers
-      this.currentMarkers = labels
+      /*this.currentMarkers = labels
         .filter(v => v != null)
         .map(m => {
           const existingMarkerId = this.currentMarkers.findIndex(
@@ -415,7 +415,7 @@ class SearchMapWithMapbox extends Component {
             const marker = createMarker(m, markerContainer);
             return { ...m, markerContainer, marker };
           }
-        });
+        });*/
 
       /* Create marker for SearchMapInfoCard component */
       if (infoCardOpen) {
@@ -469,12 +469,13 @@ class SearchMapWithMapbox extends Component {
             : null;
 
           // Create component portals for correct marker containers
-          if (isMapReadyForMarkers && m.type === 'price') {
+          /*if (isMapReadyForMarkers && m.type === 'price') {
             return ReactDOM.createPortal(
               <SearchMapPriceLabel {...m.componentProps} />,
               portalDOMContainer
             );
-          } else if (isMapReadyForMarkers && m.type === 'group') {
+          } else */
+          if (isMapReadyForMarkers && m.type === 'group') {
             return ReactDOM.createPortal(
               <SearchMapGroupLabel {...m.componentProps} />,
               portalDOMContainer
@@ -495,7 +496,7 @@ class SearchMapWithMapbox extends Component {
 
 SearchMapWithMapbox.defaultProps = {
   center: null,
-  priceLabels: [],
+  //priceLabels: [],
   infoCard: null,
   zoom: 11,
   reusableMapHiddenHandle: null,
@@ -506,7 +507,7 @@ SearchMapWithMapbox.propTypes = {
   location: shape({
     search: string.isRequired,
   }).isRequired,
-  priceLabels: arrayOf(node),
+  //priceLabels: arrayOf(node),
   infoCard: node,
   onClick: func.isRequired,
   onMapMoveEnd: func.isRequired,

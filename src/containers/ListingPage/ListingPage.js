@@ -294,6 +294,7 @@ export class ListingPageComponent extends Component {
               <p className={css.loadingText}>
                 <FormattedMessage id="ListingPage.loadingListingMessage" />
               </p>
+              
             </LayoutWrapperMain>
             <LayoutWrapperFooter>
               <Footer />
@@ -429,6 +430,12 @@ export class ListingPageComponent extends Component {
                   <SectionDescriptionMaybe description={description} />
                   <SectionRulesMaybe publicData={publicData} />
                   <SectionProducts />
+                  <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
+                    <script>
+                      LeadDyno.key = "e2dc7f3d7caecc524ec8c19e8d0d8f9d853aa157";
+                      LeadDyno.recordVisit();
+                      LeadDyno.autoWatch();
+                    </script>
 
 
 

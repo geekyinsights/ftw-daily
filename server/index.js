@@ -75,23 +75,7 @@ app.use(
     origin: 'http://localhost:3000',
   })
 );
-
-if (cspEnabled) {
-  // When a CSP directive is violated, the browser posts a JSON body
-  // to the defined report URL and we need to parse this body.
-  app.use(
-    bodyParser.json({
-      type: ['json', 'application/csp-report'],
-    })
-  );
-
-  // CSP can be turned on in report or block mode. In report mode, the
-  // browser checks the policy and calls the report URL when the
-  // policy is violated, but doesn't block any requests. In block
-  // mode, the browser also blocks the requests.
-  const reportOnly = CSP === 'report';
-  app.use(csp(cspReportUrl, USING_SSL, reportOnly));
-}
+app.use(bodyParser.json());
 
 // Redirect HTTP to HTTPS if USING_SSL is `true`.
 // This also works behind reverse proxies (load balancers) as they are for example used by Heroku.

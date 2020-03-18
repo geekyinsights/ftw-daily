@@ -1,0 +1,26 @@
+.summaryProductWrapper {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+}
+
+.price {
+  margin: 0;
+  opacity: 0.45;
+}
+
+.productImage {
+  width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+  background-position: center;
+  background-size: cover;
+}

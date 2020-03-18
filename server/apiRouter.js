@@ -13,6 +13,8 @@ const crypto = require('crypto');
 const sharetribeSdk = require('sharetribe-flex-sdk');
 const Decimal = require('decimal.js');
 const axios = require('axios');
+const { createOrder, getSkus, payOrder } = require('./payment/paymentController');
+
 const CLIENT_ID = process.env.REACT_APP_SHARETRIBE_SDK_CLIENT_ID;
 const ROOT_URL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 const CONSOLE_URL =
@@ -22,7 +24,6 @@ const TRANSIT_VERBOSE = process.env.REACT_APP_SHARETRIBE_SDK_TRANSIT_VERBOSE ===
 const USING_SSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
 
 const router = express.Router();
-
 // redirect_uri param used when initiating a login as authentication flow and
 // when requesting a token using an authorization code
 const loginAsRedirectUri = `${ROOT_URL.replace(/\/$/, '')}/api/login-as`;
@@ -130,6 +131,11 @@ router.post('/newCustomer', async (req, res) => {
     res.send(e);
   }
 });
+
+// PAYMENTS API ROUTES
+
+router.get('/skus', getSkus);
+router.post('/pay', payOrder);
 // Works as the redirect_uri passed in an authorization code request. Receives
 // an authorization code and uses that to log in and redirect to the landing
 // page.

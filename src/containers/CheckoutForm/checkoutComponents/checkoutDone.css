@@ -1,0 +1,43 @@
+.doneWrapper {
+  width: 40vw;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doneContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.doneIcon {
+  color: #4fd84f;
+  width: 5rem;
+  height: 5rem;
+}
+
+.doneText {
+  text-align: center;
+}
+
+.optionsWrapper {
+  width: 100%;
+  justify-content: space-around;
+  display: flex;
+}
+
+.action {
+  width: 40%;
+  padding: 0.3rem;
+  font-size: 16px;
+  background-color: #ffc9ca;
+  border: none;
+  margin-top: 3rem;
+}
+
+.action > a {
+  color: #4a4a4a;
+}

@@ -99,7 +99,7 @@ const routeConfiguration = () => {
       loadData: ListingPage.loadData,
     },
     {
-      path: '/l/:slug/:id/checkout',
+      path: '/l/checkout',
       name: 'CheckoutPage',
       auth: true,
       component: props => <CheckoutForm {...props} />,

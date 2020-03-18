@@ -1,5 +1,5 @@
 export const getProductsByStoreHash = async () => {
-  const data = await fetch('http://localhost:4000/api/products', {
+  const data = await fetch('/api/products', {
     method: 'GET',
   });
 

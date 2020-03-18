@@ -53,7 +53,7 @@ const TopbarDesktop = props => {
   );
 
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
-
+/*
   const inboxLink = authenticatedOnClientSide ? (
     <NamedLink
       className={css.inboxLink}
@@ -65,7 +65,7 @@ const TopbarDesktop = props => {
         {notificationDot}
       </span>
     </NamedLink>
-  ) : null;
+  ) : null;*/
 
   const currentPageClass = page => {
     const isAccountSettingsPage =
@@ -141,13 +141,12 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-      {/*{search}*/}
+      {search}
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
       </NamedLink>
-      {inboxLink}
       {profileMenu}
       {signupLink}
       {loginLink}

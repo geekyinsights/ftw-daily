@@ -120,7 +120,7 @@ export const searchMapListingsError = e => ({
 
 export const searchListings = searchParams => (dispatch, getState, sdk) => {
   dispatch(searchListingsRequest(searchParams));
-
+/*
   const priceSearchParams = priceParam => {
     const inSubunits = value =>
       convertUnitToSubUnit(value, unitDivisor(config.currencyConfig.currency));
@@ -130,8 +130,8 @@ export const searchListings = searchParams => (dispatch, getState, sdk) => {
           price: [inSubunits(values[0]), inSubunits(values[1]) + 1].join(','),
         }
       : {};
-  };
-
+  };*/
+/*
   const datesSearchParams = datesParam => {
     const values = datesParam ? datesParam.split(',') : [];
     const hasValues = datesParam && values.length === 2;
@@ -148,16 +148,16 @@ export const searchListings = searchParams => (dispatch, getState, sdk) => {
           availability: 'full',
         }
       : {};
-  };
+  };*/
 
-  const { perPage, price, dates, ...rest } = searchParams;
-  const priceMaybe = priceSearchParams(price);
-  const datesMaybe = datesSearchParams(dates);
+  const { perPage, /*price, dates,*/ ...rest } = searchParams;
+  //const priceMaybe = priceSearchParams(price);
+  //const datesMaybe = datesSearchParams(dates);
 
   const params = {
     ...rest,
-    ...priceMaybe,
-    ...datesMaybe,
+   // ...priceMaybe,
+    //...datesMaybe,
     per_page: perPage,
   };
 

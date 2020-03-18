@@ -84,6 +84,13 @@ const AboutPage = () => {
                 <ExternalLink href={siteTwitterPage}>Twitter</ExternalLink>.
               </p>
             </div>
+            <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
+            <script>
+              LeadDyno.key = "e2dc7f3d7caecc524ec8c19e8d0d8f9d853aa157";
+              LeadDyno.recordVisit();
+              LeadDyno.autoWatch();
+            </script>
+
           </div>
         </LayoutWrapperMain>
 

@@ -9,38 +9,38 @@ const { LatLng, LatLngBounds } = sdkTypes;
 // `predictionPlace` (util.types.place) properties.
 export default [
   {
-    id: 'default-helsinki',
+    id: 'default-jackson',
     predictionPlace: {
-      address: 'Helsinki, Finland',
-      bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
+      address: 'Jackson, MS',
+      bounds: new LatLngBounds(new LatLng(31.298756, -90.184807), new LatLng(32.298756,-91.184807)),
     },
   },
   {
-    id: 'default-turku',
+    id: 'default-memphis',
     predictionPlace: {
-      address: 'Turku, Finland',
-      bounds: new LatLngBounds(new LatLng(60.53045, 22.38197), new LatLng(60.33361, 22.06644)),
+      address: 'Memphis, TN',
+      bounds: new LatLngBounds(new LatLng(34.135422, -89.23288), new LatLng(36.135422, -91.23288)),
     },
   },
   {
-    id: 'default-tampere',
+    id: 'default-neworleans',
     predictionPlace: {
-      address: 'Tampere, Finland',
-      bounds: new LatLngBounds(new LatLng(61.83657, 24.11838), new LatLng(61.42728, 23.5422)),
+      address: 'New Orleans, LA',
+      bounds: new LatLngBounds(new LatLng(28.951065, -90.071533), new LatLng(29.951065, -91.0715332)),
     },
   },
   {
-    id: 'default-oulu',
+    id: 'default-chicago',
     predictionPlace: {
-      address: 'Oulu, Finland',
-      bounds: new LatLngBounds(new LatLng(65.56434, 26.77069), new LatLng(64.8443, 24.11494)),
+      address: 'Chicago, IL',
+      bounds: new LatLngBounds(new LatLng(41.974163, -86.907321), new LatLng(42.974163, -87.907321)),
     },
   },
   {
-    id: 'default-ruka',
+    id: 'default-atlanta',
     predictionPlace: {
-      address: 'Ruka, Finland',
-      bounds: new LatLngBounds(new LatLng(66.16997, 29.16773), new LatLng(66.16095, 29.13572)),
+      address: 'Atlanta, GA',
+      bounds: new LatLngBounds(new LatLng(33.620279, -83.433097), new LatLng(34.620279, -84.433097)),
     },
   },
 ];

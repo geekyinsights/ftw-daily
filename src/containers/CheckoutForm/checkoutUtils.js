@@ -1,7 +1,7 @@
 import { getProductsByStoreHash } from '../../util/api/getProductsByStoreHash';
 
 const KEY = '@PRODUCT_IDS';
-
+const fetchURL = process.env.REACT_APP_ENV === 'production' ? '/api' : 'http://localhost:4000/api';
 export const getProductIdsFromStorage = () => {
   const ids = window.localStorage.getItem(KEY);
 
@@ -20,7 +20,7 @@ export const addProductIdToCart = productId => {
 };
 
 export const createOrder = async order => {
-  const newOrder = await fetchUtil('http://localhost:4000/api/orders', { method: 'POST' });
+  const newOrder = await fetchUtil('/orders', { method: 'POST' });
   console.log('ORDER', newOrder);
   /* try {
     console.log('TEST', _stripe.orders.create);
@@ -38,7 +38,7 @@ export const processPayment = async (token, amount, shippingInfo, orderInfo) => 
     shippingInfo,
     orderInfo,
   });
-  return fetchUtil('http://localhost:4000/api/pay', { method: 'POST', body });
+  return fetchUtil('/pay', { method: 'POST', body });
 };
 export const getSummaryProducts = async () => {
   const ids = getProductIdsFromStorage();
@@ -47,15 +47,15 @@ export const getSummaryProducts = async () => {
 };
 
 const fetchUtil = async (url, options = {}) => {
+  console.log('URL', fetchURL);
   try {
     const headers = {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     };
 
-    console.log('ehaders', headers);
     console.log({ ...options, headers: headers });
-    const res = await fetch(url, { ...options, headers });
+    const res = await fetch(fetchURL + url, { ...options, headers });
 
     return await res.json();
   } catch (e) {

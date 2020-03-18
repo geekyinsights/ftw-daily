@@ -19,6 +19,12 @@
   height: 5rem;
 }
 
+.emptyIcon {
+  color: #ffc9ca;
+  width: 5rem;
+  height: 5rem;
+}
+
 .doneText {
   text-align: center;
 }

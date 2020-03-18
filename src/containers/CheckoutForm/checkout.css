@@ -1,9 +1,18 @@
 .checkoutField {
-  margin-bottom: 0.95rem;
+  /* margin-bottom: 0.95rem; */
   font-size: 16px;
   padding: 4px 0;
 }
 
+.formField {
+  height: 2.75rem;
+  display: flex;
+  flex-direction: column;
+}
+.errorLabel {
+  font-size: 0.7rem;
+  color: #f17070;
+}
 .checkoutContainer {
   width: 55%;
   margin: auto;
@@ -32,4 +41,5 @@
   background-color: #ffc9ca;
   border: none;
   margin-top: 3rem;
+  margin-bottom: 5rem;
 }

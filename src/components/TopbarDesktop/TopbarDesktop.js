@@ -17,6 +17,7 @@ import {
 import { TopbarSearchForm } from '../../forms';
 
 import css from './TopbarDesktop.css';
+import { CheckoutIcon } from './CheckoutIcon';
 
 const TopbarDesktop = props => {
   const {
@@ -53,7 +54,7 @@ const TopbarDesktop = props => {
   );
 
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
-/*
+  /*
   const inboxLink = authenticatedOnClientSide ? (
     <NamedLink
       className={css.inboxLink}
@@ -78,6 +79,7 @@ const TopbarDesktop = props => {
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
         <Avatar className={css.avatar} user={currentUser} disableProfileLink />
       </MenuLabel>
+
       <MenuContent className={css.profileMenuContent}>
         <MenuItem key="ManageListingsPage">
           <NamedLink
@@ -132,6 +134,12 @@ const TopbarDesktop = props => {
     </NamedLink>
   );
 
+  const checkoutIcon = (
+    <NamedLink name="CheckoutPage" className={css.profileMenuLabel}>
+      <CheckoutIcon />
+    </NamedLink>
+  );
+
   return (
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">
@@ -148,6 +156,7 @@ const TopbarDesktop = props => {
         </span>
       </NamedLink>
       {profileMenu}
+      {checkoutIcon}
       {signupLink}
       {loginLink}
     </nav>

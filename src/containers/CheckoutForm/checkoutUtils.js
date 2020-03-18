@@ -10,6 +10,8 @@ export const getProductIdsFromStorage = () => {
   } else return [];
 };
 
+export const finishOrder = () => window.localStorage.setItem(KEY, JSON.stringify([]));
+
 export const addProductIdToCart = productId => {
   const ids = getProductIdsFromStorage();
   ids.push(productId);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
-import { processPayment } from '../checkoutUtils';
+import { processPayment, finishOrder } from '../checkoutUtils';
 import css from '../checkout.css';
 const PaymentHandler = props => {
   const [error, setError] = useState(null);
@@ -28,10 +28,17 @@ const PaymentHandler = props => {
     setProcessing(true);
     const card = elements.getElement(CardElement);
     const result = await stripe.createToken(card);
-    console.log('RESULT', result);
+    let errors = checkErrors();
+    console.log('ERRRS', errors);
     if (result.error) {
       setError(result.error.message);
-    } else {
+    }
+    if (errors !== {}) {
+      console.log('ERRRS', errors);
+
+      props.onFormError(errors);
+    }
+    if (!result.error && errors !== {}) {
       setError(null);
       const payment = await processPayment(
         result.token.id,
@@ -39,10 +46,23 @@ const PaymentHandler = props => {
         shippingInfo,
         orderInfo
       );
-      console.log('PAYMENT', payment);
+      finishOrder();
       props.onPaymentDone(payment);
     }
     setProcessing(false);
+  };
+
+  const checkErrors = () => {
+    let errorMap = {};
+    if (!shippingInfo.name) errorMap.name = true;
+    if (!shippingInfo.email) errorMap.email = true;
+    if (!shippingInfo.city) errorMap.city = true;
+    if (!shippingInfo.line1) errorMap.line1 = true;
+    if (!shippingInfo.state) errorMap.state = true;
+    if (!shippingInfo.country) errorMap.country = true;
+    if (!shippingInfo.postal_code) errorMap.zip = true;
+
+    return errorMap;
   };
 
   return (
@@ -50,7 +70,7 @@ const PaymentHandler = props => {
       <div class="form-row">
         <label for="card-element">Credit or debit card</label>
         <CardElement id="card-element" options={CARD_ELEMENT_OPTIONS} onChange={handleChange} />
-        <div className="card-errors" role="alert">
+        <div className={css.errorLabel} role="alert">
           {error}
         </div>
       </div>
@@ -65,6 +85,7 @@ const PaymentHandler = props => {
 export const PaymentForm = props => {
   const [shippingInfo, setShippingInfo] = useState(props.shippingInfo);
   const [orderInfo, setOrderInfo] = useState(props.orderInfo);
+  console.log('SHIPPING INFO', shippingInfo);
   useEffect(() => {
     setShippingInfo(props.shippingInfo);
     setOrderInfo(props.orderInfo);

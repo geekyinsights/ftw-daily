@@ -38,7 +38,7 @@ const PaymentHandler = props => {
 
       props.onFormError(errors);
     }
-    if (!result.error && errors !== {}) {
+    if (!result.error && errors === {}) {
       setError(null);
       const payment = await processPayment(
         result.token.id,

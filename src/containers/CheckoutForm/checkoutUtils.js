@@ -49,7 +49,7 @@ export const getSummaryProducts = async () => {
 };
 
 const fetchUtil = async (url, options = {}) => {
-  const _fetchURL = '/api';
+  const _fetchURL = 'http://localhost:4000/api';
   try {
     const headers = {
       Accept: 'application/json',

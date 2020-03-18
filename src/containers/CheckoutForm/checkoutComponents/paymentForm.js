@@ -29,16 +29,15 @@ const PaymentHandler = props => {
     const card = elements.getElement(CardElement);
     const result = await stripe.createToken(card);
     let errors = checkErrors();
-    console.log('ERRRS', errors);
     if (result.error) {
       setError(result.error.message);
     }
-    if (errors !== {}) {
+    if (errors) {
       console.log('ERRRS', errors);
 
       props.onFormError(errors);
     }
-    if (!result.error && errors === {}) {
+    if (!result.error && !errors) {
       setError(null);
       const payment = await processPayment(
         result.token.id,
@@ -61,6 +60,7 @@ const PaymentHandler = props => {
     if (!shippingInfo.state) errorMap.state = true;
     if (!shippingInfo.country) errorMap.country = true;
     if (!shippingInfo.postal_code) errorMap.zip = true;
+    if (Object.keys(errorMap).length === 0 && errorMap.constructor === Object) return null;
 
     return errorMap;
   };

@@ -47,7 +47,7 @@ export const getSummaryProducts = async () => {
 };
 
 const fetchUtil = async (url, options = {}) => {
-  console.log('URL', fetchURL);
+  const _fetchURL = '/api';
   try {
     const headers = {
       Accept: 'application/json',
@@ -55,7 +55,7 @@ const fetchUtil = async (url, options = {}) => {
     };
 
     console.log({ ...options, headers: headers });
-    const res = await fetch(fetchURL + url, { ...options, headers });
+    const res = await fetch(_fetchURL + url, { ...options, headers });
 
     return await res.json();
   } catch (e) {

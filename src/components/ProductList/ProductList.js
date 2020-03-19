@@ -15,7 +15,7 @@ class ProductList extends Component {
     this.state = {
       params: {},
       products: [],
-
+      addedProduct: '',
       getProductAndSiteInfo: async params => {
         try {
           const { data } = await getProductsByStoreHash();
@@ -48,9 +48,27 @@ class ProductList extends Component {
       });
   }
 
+  displayProductToast = product => {
+    this.setState({ addedProduct: product.name });
+    setTimeout(() => {
+      this.setState({ addedProduct: '' });
+    }, 4500);
+  };
   render() {
     return (
       <div>
+        {this.state.addedProduct && (
+          <div className={css.cartBanner}>
+            <div className={css.cartBannerWrapper}>
+              <h4>
+                <strong>{this.state.addedProduct}</strong> added to your cart
+              </h4>
+              <button className={css.cartButton}>
+                <a href="/l/checkout">Go To Cart</a>
+              </button>
+            </div>
+          </div>
+        )}
         {
           <div className={''}>
             <div className={css.productTitle}>
@@ -70,9 +88,12 @@ class ProductList extends Component {
                         <div className={css.cardImage}>
                           <img src={productimage} />
                         </div>
-                        <h5 className={css.cardPrice}>{productprice}</h5>
+                        <h5 className={css.cardPrice}>{productprice} $</h5>
                         <a
-                          onClick={() => addProductIdToCart(productId)}
+                          onClick={() => {
+                            this.displayProductToast(product);
+                            addProductIdToCart(productId);
+                          }}
                           className={css.enquirySubmitButtonWrapper}
                         >
                           Add to cart

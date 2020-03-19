@@ -89,7 +89,7 @@ export const PaymentForm = props => {
     setShippingInfo(props.shippingInfo);
     setOrderInfo(props.orderInfo);
   }, [props.shippingInfo]);
-  const stripeInit = loadStripe('sk_live_DulBDBWnE5noYoS0l1wbRbp100bnMSJcmy');
+  const stripeInit = loadStripe('pk_live_mYCnHHQJx8KCQ8ZKqjisOSvc');
 
   return (
     <Elements stripe={stripeInit}>

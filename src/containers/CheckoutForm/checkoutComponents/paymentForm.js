@@ -85,12 +85,11 @@ const PaymentHandler = props => {
 export const PaymentForm = props => {
   const [shippingInfo, setShippingInfo] = useState(props.shippingInfo);
   const [orderInfo, setOrderInfo] = useState(props.orderInfo);
-  console.log('SHIPPING INFO', shippingInfo);
   useEffect(() => {
     setShippingInfo(props.shippingInfo);
     setOrderInfo(props.orderInfo);
   }, [props.shippingInfo]);
-  const stripeInit = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+  const stripeInit = loadStripe('sk_live_DulBDBWnE5noYoS0l1wbRbp100bnMSJcmy');
 
   return (
     <Elements stripe={stripeInit}>

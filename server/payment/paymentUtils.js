@@ -1,10 +1,9 @@
-const _stripe = require('stripe')('sk_test_w6lCKKmJlCeN0SWYtXJBqxA600VLZtDgPH');
+const _stripe = require('stripe')('sk_live_DulBDBWnE5noYoS0l1wbRbp100bnMSJcmy');
 
 const getStripeInstance = () => _stripe;
 
 const processPayment = async (token, amount, shippingInfo, orderInfo) => {
   try {
-    console.log('SHIPPING INFO', shippingInfo);
     const charge = await getStripeInstance().charges.create({
       amount: amount * 100,
       currency: 'usd',

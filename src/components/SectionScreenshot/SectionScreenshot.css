@@ -68,7 +68,7 @@
     margin: 0 auto;
     max-width: calc(1052px + 36px + 36px);
     width: 100%;
-    padding: 0 0px 0 700px;
+    padding: 0 600px 0 0px;
   }
 }
 

@@ -84,14 +84,6 @@ const TopbarMobileMenu = props => {
         <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
-        {/*<NamedLink
-          className={classNames(css.inbox, currentPageClass('InboxPage'))}
-          name="InboxPage"
-          params={{ tab: currentUserHasListings ? 'sales' : 'orders' }}
-        >
-          <FormattedMessage id="TopbarMobileMenu.inboxLink" />
-          {notificationCountBadge}
-        </NamedLink>*/}
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
           name="ManageListingsPage"

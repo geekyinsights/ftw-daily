@@ -72,10 +72,6 @@ class ProductList extends Component {
                         </div>
                         <h5 className={css.cardPrice}>{productprice}</h5>
                         <a
-                          href={
-                            'https://museebath.com' + '/cart.php?action=add&product_id=' + productId
-                          }
-                          target={'_blank'}
                           onClick={() => addProductIdToCart(productId)}
                           className={css.enquirySubmitButtonWrapper}
                         >

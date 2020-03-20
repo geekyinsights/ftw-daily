@@ -7,10 +7,10 @@ import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
 import {
-  BookingDateRangeFilter,
+  //BookingDateRangeFilter,
   SelectSingleFilter,
   SelectMultipleFilter,
-  PriceFilter,
+  //PriceFilter,
   KeywordFilter,
 } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
@@ -32,7 +32,7 @@ const initialValue = (queryParams, paramName) => {
 const initialValues = (queryParams, paramName) => {
   return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
 };
-
+/*
 const initialPriceRangeValue = (queryParams, paramName) => {
   const price = queryParams[paramName];
   const valuesFromParams = !!price ? price.split(',').map(v => Number.parseInt(v, RADIX)) : [];
@@ -57,7 +57,7 @@ const initialDateRangeValue = (queryParams, paramName) => {
       : { dates: null };
 
   return initialValues;
-};
+};*/
 
 const SearchFiltersComponent = props => {
   const {
@@ -69,8 +69,8 @@ const SearchFiltersComponent = props => {
     searchInProgress,
     categoryFilter,
     //amenitiesFilter,
-    priceFilter,
-    dateRangeFilter,
+    //priceFilter,
+    //dateRangeFilter,
     keywordFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
@@ -101,7 +101,7 @@ const SearchFiltersComponent = props => {
   const initialCategory = categoryFilter
     ? initialValue(urlQueryParams, categoryFilter.paramName)
     : null;
-
+/*
   const initialPriceRange = priceFilter
     ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
     : null;
@@ -109,7 +109,7 @@ const SearchFiltersComponent = props => {
   const initialDateRange = dateRangeFilter
     ? initialDateRangeValue(urlQueryParams, dateRangeFilter.paramName)
     : null;
-
+*/
   const initialKeyword = keywordFilter
     ? initialValue(urlQueryParams, keywordFilter.paramName)
     : null;
@@ -132,7 +132,7 @@ const SearchFiltersComponent = props => {
 
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
-
+/*
   const handlePrice = (urlParam, range) => {
     const { minPrice, maxPrice } = range || {};
     const queryParams =
@@ -156,7 +156,7 @@ const SearchFiltersComponent = props => {
         : omit(urlQueryParams, urlParam);
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
-
+*/
   const handleKeyword = (urlParam, values) => {
     const queryParams = values
       ? { ...urlQueryParams, [urlParam]: values }
@@ -189,7 +189,7 @@ const SearchFiltersComponent = props => {
       initialValues={initialAmenities}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
-  ) : null;*/
+  ) : null;
 
   const priceFilterElement = priceFilter ? (
     <PriceFilter
@@ -213,7 +213,7 @@ const SearchFiltersComponent = props => {
         contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
         initialValues={initialDateRange}
       />
-    ) : null;
+    ) : null;*/
 
   const keywordFilterElement =
     keywordFilter && keywordFilter.config.active ? (
@@ -250,8 +250,6 @@ const SearchFiltersComponent = props => {
     <div className={classes}>
       <div className={css.filters}>
         {categoryFilterElement}
-        {priceFilterElement}
-        {dateRangeFilterElement}
         {keywordFilterElement}
         {toggleSearchFiltersPanelButton}
       </div>
@@ -286,8 +284,8 @@ SearchFiltersComponent.defaultProps = {
   searchingInProgress: false,
   categoryFilter: null,
   //amenitiesFilter: null,
-  priceFilter: null,
-  dateRangeFilter: null,
+  // priceFilter: null,
+  //dateRangeFilter: null,
   isSearchFiltersPanelOpen: false,
   toggleSearchFiltersPanel: null,
   searchFiltersPanelSelectedCount: 0,
@@ -303,8 +301,8 @@ SearchFiltersComponent.propTypes = {
   onManageDisableScrolling: func.isRequired,
   categoriesFilter: propTypes.filterConfig,
   //amenitiesFilter: propTypes.filterConfig,
-  priceFilter: propTypes.filterConfig,
-  dateRangeFilter: propTypes.filterConfig,
+  //priceFilter: propTypes.filterConfig,
+  //dateRangeFilter: propTypes.filterConfig,
   isSearchFiltersPanelOpen: bool,
   toggleSearchFiltersPanel: func,
   searchFiltersPanelSelectedCount: number,

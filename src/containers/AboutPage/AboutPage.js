@@ -41,7 +41,7 @@ const AboutPage = () => {
               <h4  className={css.subtile}>We took the normal fundraising approach that schools, sports teams and millions of other organizations use every year and made it simple. You can raise money from anytime, from anywhere in the country with the Soak Up the Funds Online Platform. And you’ll have access to sell a product that people actually want— Musee Bath’s national best-selling bath balms. 
 </h4>
 
-                  </div>
+         </div>
         </LayoutWrapperMain>
 
         <LayoutWrapperFooter>

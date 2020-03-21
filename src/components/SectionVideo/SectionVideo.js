@@ -14,24 +14,9 @@ const SectionVideo = props => {
   return (
     <div className={classes}>
       <div className={css.heroContent}>
-        <h2 className={css.heroSubTitle}>
+        <h2 className={classNames(css.heroSubTitle || css.container)}>
           <FormattedMessage id="SectionVideo.subTitle" />
-        </h2>
-
-        <NamedLink
-         
-         name="SearchPage"
-         to={{
-           search:
-             'address=Finland&bounds=70.0922932%2C31.5870999%2C59.693623%2C20.456500199999937',
-         }}
-         className={css.heroButton}
-       >
-         <FormattedMessage id="SectionVideo.browseButton" />
-       </NamedLink>       
-        
-        
-       
+        </h2>     
       </div>
     </div>
   );

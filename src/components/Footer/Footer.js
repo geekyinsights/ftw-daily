@@ -86,26 +86,12 @@ const Footer = props => {
                     <FormattedMessage id="Footer.toNewListingPage" />
                   </NamedLink>
                 </li>
-                <li className={css.listItem}>
+                {/*<li className={css.listItem}>
                   <NamedLink name="AboutPage" className={css.link}>
                     <FormattedMessage id="Footer.toAboutPage" />
                   </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toFAQPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toHelpPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="AboutPage" to={{ hash: '#contact' }} className={css.link}>
-                    <FormattedMessage id="Footer.toContactPage" />
-                  </NamedLink>
-                </li>
+                </li> */}
+
               </ul>
             </div>
             <div className={css.searches}>
@@ -115,7 +101,7 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Jackson%2C%20MS&bounds=31.298756%2C-90.184807%2C34.298756%2C-91.184807&origin=32.298756%2C-91.184807',
+                        '?address=Jacskon%2C%20MS&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002',
                     }}
                     className={css.link}
                   >
@@ -127,7 +113,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Houston%2C%20TX&bounds=28.5304531%2C-94.38197820000005%2C30.33361189999999%2C-96.066440100000023&origin=29.760427%2C-95.369804',
+                        '?address=Memphis%2C%20TN&bounds=60.5304531%2C22.38197820000005%2C60.33361189999999%2C22.066440100000023&origin=60.4518126%2C22.26663020000001',
+
                     }}
                     className={css.link}
                   >
@@ -139,7 +126,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Austin%2C%20TX&bounds=29.83657359999999%2C-97.118384099999957%2C31.42728169999999%2C-97.542201299999988&origin=30.267153%2C-97.743057',
+                        '?address=LosAngeles%2C%20CA&bounds=61.83657359999999%2C24.118384099999957%2C61.42728169999999%2C23.542201299999988&origin=61.4977524%2C23.760953500000028',
+
                     }}
                     className={css.link}
                   >
@@ -151,7 +139,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=NewOrleans%2C%20LA&bounds=28.5643426%2C-89.770696000000044%2C30.8443082%2C-91.114941999999928&origin=29.951065%2C-90.071533',
+
+                        '?address=NewOrleans%2C%20LA&bounds=65.5643426%2C26.770696000000044%2C64.8443082%2C24.114941999999928&origin=65.0120888%2C25.465077199999996',
                     }}
                     className={css.link}
                   >
@@ -163,7 +152,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=NewYork%2C%20NY&bounds=39.1699707%2C-73.167735499999935%2C41.1609529%2C-75.13572069999998&origin=40.713051%2C-74.007233',
+                        '?address=Chicago%2C%20IL&bounds=66.1699707%2C29.167735499999935%2C66.1609529%2C29.13572069999998&origin=66.1654622%2C29.151728100000014',
+
                     }}
                     className={css.link}
                   >
@@ -179,7 +169,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=LosAngeles%2C%20CA&bounds=33.51073,%2C-117.4247%2C35.51073,%2C-119.4247,&origin=34.0544%2C-118.244',
+                        '?address=Atlanta%2C%20GA&bounds=63.40340329999999%2C28.457629300000008%2C62.592254%2C26.890028099999995&origin=62.89796999999999%2C27.67817249999996',
+
                     }}
                     className={css.link}
                   >
@@ -191,7 +182,9 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Chicago%2C%20IL&bounds=40.1990357%2C-86.900274999999965%2C42.20955799999999%2C-88.82762809999997&origin=41.974163%2C-87.907321',
+
+                        '?address=NewYork%2C%20NY&bounds=62.1990357%2C27.900274999999965%2C61.20955799999999%2C26.82762809999997&origin=61.68872709999999%2C27.27214570000001',
+
                     }}
                     className={css.link}
                   >
@@ -203,7 +196,8 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Atlanta%2C%20GA&bounds=32.3636105%2C-83.8505715%2C34.0499087%2C-84.499656500000015&origin=33.620279%2C-84.433097',
+                        '?address=Austin%2C%20TX&bounds=60.3636105%2C24.8505715%2C60.0499087%2C24.499656500000015&origin=60.2054911%2C24.655899999999974',
+
                     }}
                     className={css.link}
                   >
@@ -215,7 +209,9 @@ const Footer = props => {
                     name="SearchPage"
                     to={{
                       search:
-                        '?address=Memphis%2C%20TN&bounds=34.40113659999999%2C-89.19306240000003%2C36.23714200000001%2C-91.746512199999984&origin=35.135422%2C-90.23288',
+
+                        '?address=LittleRock%2C%20AR&bounds=60.40113659999999%2C25.19306240000003%2C60.23714200000001%2C24.746512199999984&origin=60.29335239999999%2C25.037768599999936',
+
                     }}
                     className={css.link}
                   >
@@ -226,8 +222,9 @@ const Footer = props => {
                   <NamedLink
                     name="SearchPage"
                     to={{
-                      search:
-                        '?address=LittleRock%2C%20AR&bounds=34.87664400000001%2C-91.34532850000005%2C35.45425059999999%2C-93.94061499999998&origin=34.722473%2C-92.337681',
+
+                        '?address=Houston%20TX&bounds=60.87664400000001%2C21.34532850000005%2C59.45425059999999%2C19.94061499999998&origin=59.8994405%2C20.593996100000027',
+
                     }}
                     className={css.link}
                   >

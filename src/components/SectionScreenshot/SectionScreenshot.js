@@ -21,13 +21,13 @@ const SectionScreenshot = props => {
           <FormattedMessage id="SectionScreenshot.subTitle" />
         </h2>
         <h2 className={css.heroSubTitle}>
-          <FormattedMessage id="SectionScreenshot.subTitle" />
+          <FormattedMessage id="SectionScreenshot.subTitle2" />
         </h2>
         <h2 className={css.heroSubTitle}>
-          <FormattedMessage id="SectionScreenshot.subTitle" />
+          <FormattedMessage id="SectionScreenshot.subTitle3" />
         </h2>
         <h2 className={css.heroSubTitle}>
-          <FormattedMessage id="SectionScreenshot.subTitle" />
+          <FormattedMessage id="SectionScreenshot.subTitle4" />
         </h2>
         
         

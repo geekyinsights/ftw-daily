@@ -26,7 +26,7 @@
       url('../../assets/sutf-desktop-header.png');
 
     /* Add loading color for the div */
-    background-color: var(--matterColorBackgroundSite);
+    background-color: var(--marketplaceColor);
 
     /* Cover the whole screen with the background image */
     background-size: cover;
@@ -43,11 +43,14 @@
     /* Full screen Phone Section image located in root-folder/src/assets */
     --sectionPhoneImage: {
       /* Gradient direction and overlaying the black color on top of the image for better readability */
-      background: /*linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),*/
-        url('../../assets/phoneImage.png');
-  
+      @media (min-width: 1200px) {
+
+        background: none;/*linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+        url('../../assets/phoneImage.png');*/
+
+      }
       /* Add loading color for the div */
-      background-color: var(--matterColor);
+      background-color: var(--matterColorLight);
   
       /* Cover the whole screen with the background image */
       background-size: cover;
@@ -59,8 +62,14 @@
         border-radius: 40px;
         border: solid 36px var(--matterColorBright);
       }
+                /* Portrait phones and smaller */
+       @media  (max-width: 480px) {
+          background: none;
+      }
+        
     }
-  
+
+          
   /* ================ Colors ================ */
 
   --marketplaceColor: #ffc9ca;

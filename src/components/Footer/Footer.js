@@ -222,7 +222,7 @@ const Footer = props => {
                   <NamedLink
                     name="SearchPage"
                     to={{
-
+                      search:
                         '?address=Houston%20TX&bounds=60.87664400000001%2C21.34532850000005%2C59.45425059999999%2C19.94061499999998&origin=59.8994405%2C20.593996100000027',
 
                     }}

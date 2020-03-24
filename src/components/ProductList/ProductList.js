@@ -5,7 +5,9 @@ import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';
 import css from './ProductList.css';
 import { getProductsByStoreHash } from '../../util/api/getProductsByStoreHash';
 import { addProductIdToCart } from '../../containers/CheckoutForm/checkoutUtils';
-
+import {
+  NamedLink,
+} from '../../components';
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -82,7 +84,10 @@ class ProductList extends Component {
                   </div>
                 );
               })}
+              
             </div>
+           
+
           </div>
         }
       </div>

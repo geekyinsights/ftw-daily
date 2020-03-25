@@ -14,7 +14,7 @@ import {
   MenuItem,
   NamedLink,
 } from '../../components';
-import { TopbarSearchForm } from '../../forms';
+//import { TopbarSearchForm } from '../../forms';
 
 import css from './TopbarDesktop.css';
 import { CheckoutIcon } from './CheckoutIcon';
@@ -30,8 +30,8 @@ const TopbarDesktop = props => {
     intl,
     isAuthenticated,
     onLogout,
-    onSearchSubmit,
-    initialSearchFormValues,
+    //onSearchSubmit,
+    //initialSearchFormValues,
   } = props;
   const [mounted, setMounted] = useState(false);
 
@@ -43,7 +43,7 @@ const TopbarDesktop = props => {
   const isAuthenticatedOrJustHydrated = isAuthenticated || !mounted;
 
   const classes = classNames(rootClassName || css.root, className);
-
+/*
   const search = (
     <TopbarSearchForm
       className={css.searchLink}
@@ -52,7 +52,7 @@ const TopbarDesktop = props => {
       initialValues={initialSearchFormValues}
     />
   );
-
+*/
   const notificationDot = notificationCount > 0 ? <div className={css.notificationDot} /> : null;
 
   const currentPageClass = page => {
@@ -136,7 +136,7 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-      {search}
+      {/*{search} */}
       <NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
@@ -158,7 +158,7 @@ TopbarDesktop.defaultProps = {
   currentUser: null,
   currentPage: null,
   notificationCount: 0,
-  initialSearchFormValues: {},
+  //initialSearchFormValues: {},
 };
 
 TopbarDesktop.propTypes = {
@@ -170,8 +170,8 @@ TopbarDesktop.propTypes = {
   isAuthenticated: bool.isRequired,
   onLogout: func.isRequired,
   notificationCount: number,
-  onSearchSubmit: func.isRequired,
-  initialSearchFormValues: object,
+  //onSearchSubmit: func.isRequired,
+  //initialSearchFormValues: object,
   intl: intlShape.isRequired,
 };
 

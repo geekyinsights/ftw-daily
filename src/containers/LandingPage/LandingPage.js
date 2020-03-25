@@ -11,14 +11,14 @@ import {
   SectionHero,
   SectionScreenshot,
   SectionHowItWorks,
-  SectionVideo,
-  SectionLocations,
+  SectionProductsMain,
   LayoutSingleColumn,
   LayoutWrapperTopbar,
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
 } from '../../components';
+
 import { TopbarContainer } from '../../containers';
 
 import facebookImage from '../../assets/sutf-desktop-header.png';
@@ -69,17 +69,17 @@ export const LandingPageComponent = props => {
           <div className={css.heroContainer}>
                <SectionScreenshot className={css.hero}/>
           </div>
-          {/*<div className={css.heroContainer}>
-               <SectionVideo className={css.hero}/>
-    </div> */}
           <ul>
            
-            <li className={css.section}>
-              <div className={css.sectionContent}>
-                <SectionHowItWorks />
-              </div>
-            </li>
-          </ul>
+           <li className={css.section}>
+             <div className={css.sectionContent}>
+               <SectionHowItWorks />
+             </div>
+           </li>
+         </ul>
+          <SectionProductsMain />
+
+
           <script type="text/javascript" src="https://static.leaddyno.com/js"></script>
           <script>
             LeadDyno.key = "e2dc7f3d7caecc524ec8c19e8d0d8f9d853aa157";

@@ -20,10 +20,10 @@ import {
   TopbarDesktop,
   TopbarMobileMenu,
 } from '../../components';
-import { TopbarSearchForm } from '../../forms';
+//import { TopbarSearchForm } from '../../forms';
 
 import MenuIcon from './MenuIcon';
-import SearchIcon from './SearchIcon';
+//import SearchIcon from './SearchIcon';
 import css from './Topbar.css';
 
 const MAX_MOBILE_SCREEN_WIDTH = 768;
@@ -213,15 +213,16 @@ class TopbarComponent extends Component {
             title={intl.formatMessage({ id: 'Topbar.logoIcon' })}
           >
             <Logo format="mobile" />
-           
+          
           </NamedLink>
+          {/*
           <Button
             rootClassName={css.searchMenu}
             onClick={this.handleMobileSearchOpen}
             title={intl.formatMessage({ id: 'Topbar.searchIcon' })}
           >
             <SearchIcon className={css.searchMenuIcon} />
-          </Button>
+          </Button>*/}
         </div>
         <div className={css.desktop}>
           

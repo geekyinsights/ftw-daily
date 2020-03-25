@@ -57,12 +57,8 @@ const SectionHowItWorks = props => {
         <ul>
         <div className={css.steps}>
          <div className={css.step}>
-          {productLink(
-            'Golden Hour Bath Balm',
-            helsinkiImage,
-          )}
            <p className={css.subTitle}>
-              <FormattedMessage id="SectionHowItWorks.part3Text" />
+              <FormattedMessage id="SectionHowItWorks.part1Title" />
             </p>
           </div>
         </div>
@@ -70,13 +66,8 @@ const SectionHowItWorks = props => {
         <ul>
         <div className={css.steps}>
          <div className={css.step}>
-          {productLink(
-            'Beautiful Day Bath Balm',
-            rovaniemiImage,
-          
-          )}
            <p className={css.subTitle}>
-              <FormattedMessage id="SectionHowItWorks.part2Text" />
+              <FormattedMessage id="SectionHowItWorks.part2Title" />
             </p>
           </div>
         </div>
@@ -84,13 +75,8 @@ const SectionHowItWorks = props => {
           <ul>
             <div className={css.steps}>
               <div className={css.step}>
-                {productLink(
-                  'Best Thing Bath Balm',
-                  rukaImage
-                
-                )}
                  <p className={css.subTitle}>
-                    <FormattedMessage id="SectionHowItWorks.part1Text" />
+                    <FormattedMessage id="SectionHowItWorks.part3Title" />
                   </p>
                 </div>
             </div>

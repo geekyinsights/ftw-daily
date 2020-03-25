@@ -88,7 +88,7 @@ class ProductList extends Component {
                         <div className={css.cardImage}>
                           <img src={productimage} />
                         </div>
-                        <h5 className={css.cardPrice}>{productprice} $</h5>
+                        <h5 className={css.cardPrice}> $ {productprice} </h5>
                         <a
                           onClick={() => {
                             this.displayProductToast(product);

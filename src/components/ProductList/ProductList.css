@@ -9,6 +9,17 @@
   margin-bottom: 3rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+
+  @media (max-width:760px){
+    /* styles for browsers larger than 960px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 55%;
+    height: 400px;
+    margin-bottom: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
 }
 
 .productsContainer {

@@ -147,6 +147,7 @@ export { default as StripeConnectAccountStatusBox } from './StripeConnectAccount
 export { default as StripePaymentAddress } from './StripePaymentAddress/StripePaymentAddress';
 export { default as UserCard } from './UserCard/UserCard';
 export { default as ProductList } from './ProductList/ProductList';
+export { default as SectionProductsMain } from './SectionProductsMain/SectionProductsMain';
 //////////////////////////////////////////////
 // Page sections and modal content wrappers //
 //////////////////////////////////////////////

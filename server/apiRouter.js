@@ -106,7 +106,7 @@ code_challenge_method=S256`;
 
 router.get('/products', async (req, res) => {
   try {
-    const productIds = [245, 84, 181, 85, 86, 87, 89, 90, 353, 95, 96, 179, 180, 246, 98];
+    const productIds = [487, 488, 489, 490];
 
     const url = `https://api.bigcommerce.com/stores/${STORE_HASH}/v3/catalog/products?include=images&id:in=${productIds.join(
       ','

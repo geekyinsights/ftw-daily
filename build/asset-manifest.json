@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.c5c2c745.css",
     "main.js": "/static/js/main.09039a4a.js",
     "main.js.map": "/static/js/main.09039a4a.js.map",
@@ -7,6 +8,15 @@
     "precache-manifest.7564df2698dd85019d503b413a1771f8.js": "/precache-manifest.7564df2698dd85019d503b413a1771f8.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.c5c2c745.css.map": "/static/css/main.c5c2c745.css.map",
+=======
+    "main.css": "/static/css/main.7312f14b.css",
+    "main.js": "/static/js/main.075f94d0.js",
+    "main.js.map": "/static/js/main.075f94d0.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a59e18ceae198215d65b33a5725e3aa9.js": "/precache-manifest.a59e18ceae198215d65b33a5725e3aa9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.7312f14b.css.map": "/static/css/main.7312f14b.css.map",
+>>>>>>> 2a3cf9d24e78fa0b34167cf9c3d8be570a2bd932
     "static/media/about-us-1056.jpg": "/static/media/about-us-1056.d357e285.jpg",
     "static/media/beautifulday_smaller.png": "/static/media/beautifulday_smaller.6e51e621.png",
     "static/media/bestthing_smaller.png": "/static/media/bestthing_smaller.ca9609e4.png",

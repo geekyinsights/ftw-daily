@@ -2,6 +2,7 @@
   "files": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.css": "/static/css/main.e528a07f.css",
     "main.js": "/static/js/main.92081738.js",
     "main.js.map": "/static/js/main.92081738.js.map",
@@ -11,14 +12,20 @@
 =======
 
 >>>>>>> Landing page updates mobile fixes (#6)
+=======
+>>>>>>> New build
     "main.css": "/static/css/main.355a8919.css",
-    "main.js": "/static/js/main.6a8b9c13.js",
-    "main.js.map": "/static/js/main.6a8b9c13.js.map",
+    "main.js": "/static/js/main.055a89b7.js",
+    "main.js.map": "/static/js/main.055a89b7.js.map",
     "index.html": "/index.html",
+<<<<<<< HEAD
     "precache-manifest.90ade7ee1067b58f7044c920c2cecb0a.js": "/precache-manifest.90ade7ee1067b58f7044c920c2cecb0a.js",
 >>>>>>> New Build
+=======
+    "precache-manifest.80f0ab25b17d2106ae7db1cd4f016bf9.js": "/precache-manifest.80f0ab25b17d2106ae7db1cd4f016bf9.js",
+>>>>>>> New build
     "service-worker.js": "/service-worker.js",
-    "static/css/main.e528a07f.css.map": "/static/css/main.e528a07f.css.map",
+    "static/css/main.355a8919.css.map": "/static/css/main.355a8919.css.map",
     "static/media/about-us-1056.jpg": "/static/media/about-us-1056.d357e285.jpg",
     "static/media/beautifulday_smaller.png": "/static/media/beautifulday_smaller.6e51e621.png",
     "static/media/bestthing_smaller.png": "/static/media/bestthing_smaller.ca9609e4.png",

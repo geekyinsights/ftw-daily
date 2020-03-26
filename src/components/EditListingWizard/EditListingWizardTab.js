@@ -23,7 +23,7 @@ export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const POLICY = 'policy';
 export const LOCATION = 'location';
-export const PRICING = 'pricing';
+//export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 
 // EditListingWizardTab component supports these tabs

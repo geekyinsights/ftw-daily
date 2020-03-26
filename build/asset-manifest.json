@@ -1,12 +1,16 @@
 {
   "files": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "main.css": "/static/css/main.e528a07f.css",
     "main.js": "/static/js/main.92081738.js",
     "main.js.map": "/static/js/main.92081738.js.map",
     "index.html": "/index.html",
     "precache-manifest.5cd127d08378ebd9d2246ba014738155.js": "/precache-manifest.5cd127d08378ebd9d2246ba014738155.js",
 =======
+=======
+
+>>>>>>> Landing page updates mobile fixes (#6)
     "main.css": "/static/css/main.355a8919.css",
     "main.js": "/static/js/main.6a8b9c13.js",
     "main.js.map": "/static/js/main.6a8b9c13.js.map",

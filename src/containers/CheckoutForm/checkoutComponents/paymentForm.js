@@ -33,17 +33,22 @@ const PaymentHandler = props => {
       setError(result.error.message);
     }
     if (errors) {
-      console.log('ERRRS', errors);
-
       props.onFormError(errors);
     }
     if (!result.error && !errors) {
       setError(null);
+      console.log('TRYING', window.LeadDyno);
+
       const payment = await processPayment(
         result.token.id,
         props.cartTotal,
         shippingInfo,
         orderInfo
+      );
+      window.LeadDyno.recordPurchase(
+        shippingInfo.email,
+        { purchase_amount: props.cartTotal },
+        function() {}
       );
       finishOrder();
       props.onPaymentDone(payment);
